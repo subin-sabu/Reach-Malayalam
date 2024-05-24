@@ -1,0 +1,16 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Match any document in any collection.
+    match /{document=**} {
+      // Allow read access to everyone, regardless of authentication status.
+      allow read: if true;
+      
+      // Restrict write and delete permissions to only authenticated users.
+      // This applies universally across all collections and documents within your Firestore database.
+      allow write, delete: if request.auth != null;
+    }
+  }
+}

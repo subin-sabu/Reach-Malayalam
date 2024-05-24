@@ -1,0 +1,43 @@
+/* page 2 grid areas */
+.headingKL { grid-area: headingKL; }
+.p2kl { grid-area: p2kl; }
+.NewsAd1 { grid-area: NewsAd1; }
+.btn { grid-area: btn; }
+
+/* page 2 Default/ Desktop view */
+.page-2 {
+  display: grid;
+  grid-template-columns: 2fr 1.1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "headingKL p2kl"
+    "headingKL NewsAd1"
+    "btn NewsAd1";
+  grid-gap: 0.5rem;
+}
+
+.p2cardklsmall {
+  display: none;
+}
+
+/* Page 1 tablet view */
+@media only screen and (max-width: 1079px) {
+  .page-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      
+      "headingKL"
+      "btn"
+      "NewsAd1"
+      "p2cardklsmall";
+  }
+
+  .p2cardklsmall {
+    display: block;
+  }
+
+  .p2kl {
+    display: none;
+  }
+}

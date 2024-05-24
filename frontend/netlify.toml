@@ -1,0 +1,20 @@
+[build]
+  publish = "build"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "https://storage.googleapis.com/reach-malayalam.appspot.com/sitemaps/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sitemap-index.xml"
+  to = "https://storage.googleapis.com/reach-malayalam.appspot.com/sitemaps/sitemap-index.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

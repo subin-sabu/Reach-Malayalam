@@ -1,0 +1,31 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/sitemap.xml",
+        "destination": "https://storage.googleapis.com/reach-malayalam.appspot.com/sitemaps/sitemap.xml"
+      },
+      {
+        "source": "/sitemap-index.xml",
+        "destination": "https://storage.googleapis.com/reach-malayalam.appspot.com/sitemaps/sitemap-index.xml"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
